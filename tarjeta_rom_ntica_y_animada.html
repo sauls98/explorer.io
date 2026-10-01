@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algo especial para ti</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #fce7e9;
+            background-image: radial-gradient(#e5a8ab 0.8px, transparent 0.8px), radial-gradient(#e5a8ab 0.8px, #fce7e9 0.8px);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+            overflow-x: hidden;
+        }
+        .retro-font {
+            font-family: 'Special Elite', cursive;
+        }
+        .card-shadow {
+            box-shadow: 0 25px 35px -5px rgba(43, 27, 23, 0.15), 0 10px 15px -5px rgba(43, 27, 23, 0.08), inset 0 0 50px rgba(255,255,255,0.4);
+        }
+        @keyframes float {
+            0% { transform: translateY(0vh) rotate(0deg) scale(0.9); opacity: 0.15; }
+            50% { opacity: 0.35; transform: translateY(-55vh) rotate(180deg) scale(1.1); }
+            100% { transform: translateY(-110vh) rotate(360deg) scale(0.9); opacity: 0.15; }
+        }
+        .floating-emoji {
+            position: absolute;
+            bottom: -15vh;
+            user-select: none;
+            pointer-events: none;
+            animation: float linear infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(232, 121, 121, 0.4)); }
+            50% { transform: scale(1.08); filter: drop-shadow(0 0 8px rgba(232, 121, 121, 0.8)); }
+        }
+        .animate-pulse-glow {
+            animation: pulse-glow 2.5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 relative">
+
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="floating-emoji text-3xl" style="left: 6%; animation-duration: 15s; animation-delay: 0s;">🥰</div>
+        <div class="floating-emoji text-4xl" style="left: 18%; animation-duration: 19s; animation-delay: 2s;">💖</div>
+        <div class="floating-emoji text-3xl" style="left: 30%; animation-duration: 13s; animation-delay: 4s;">😍</div>
+        <div class="floating-emoji text-4xl" style="left: 42%; animation-duration: 17s; animation-delay: 1s;">✨</div>
+        <div class="floating-emoji text-3xl" style="left: 55%; animation-duration: 14s; animation-delay: 3s;">😘</div>
+        <div class="floating-emoji text-4xl" style="left: 68%; animation-duration: 18s; animation-delay: 5s;">😊</div>
+        <div class="floating-emoji text-2xl" style="left: 80%; animation-duration: 12s; animation-delay: 2.5s;">💘</div>
+        <div class="floating-emoji text-3xl" style="left: 90%; animation-duration: 16s; animation-delay: 1.5s;">🥰</div>
+        <div class="floating-emoji text-2xl" style="left: 12%; animation-duration: 20s; animation-delay: 6s;">💫</div>
+        <div class="floating-emoji text-3xl" style="left: 62%; animation-duration: 15s; animation-delay: 4.5s;">😍</div>
+        <div class="floating-emoji text-3xl" style="left: 24%; animation-duration: 14s; animation-delay: 3.5s;">😘</div>
+        <div class="floating-emoji text-4xl" style="left: 76%; animation-duration: 16s; animation-delay: 0.5s;">💖</div>
+    </div>
+
+    <div id="app" class="w-full max-w-md mx-auto relative z-10">
+        
+        <!-- CARD 1 -->
+        <div id="card1" class="bg-[#fff5f5] border-4 border-[#2b1b17] rounded-3xl p-6 sm:p-8 card-shadow relative overflow-hidden transition-all duration-700 transform scale-100 opacity-100">
+            <!-- Decorative corner elements -->
+            <div class="absolute top-4 left-4 text-xl text-[#2b1b17]">♥</div>
+            <div class="absolute top-4 right-4 text-xl text-[#2b1b17]">♥</div>
+            <div class="absolute bottom-4 left-4 text-xl text-[#2b1b17]">♥</div>
+            <div class="absolute bottom-4 right-4 text-xl text-[#2b1b17]">♥</div>
+
+            <!-- Inner Border Line with vintage aesthetic -->
+            <div class="border-2 border-[#2b1b17] rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center relative bg-gradient-to-b from-[#fffaf9] to-[#fcedec]">
+                
+                <!-- Sparkles & Central Animated Heart -->
+                <div class="mb-5 relative">
+                    <div class="text-5xl text-[#e87979] animate-pulse-glow">♥</div>
+                    <div class="absolute -top-3 -left-7 text-lg animate-bounce">✨</div>
+                    <div class="absolute -top-3 -right-7 text-lg animate-bounce">✨</div>
+                </div>
+
+                <!-- Headings -->
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-[#2b1b17] tracking-tight leading-tight mb-3">
+                    Hay algo especial en ti
+                </h1>
+                
+                <div class="w-28 h-[2px] bg-[#2b1b17] my-3 relative">
+                    <span class="absolute left-1/2 -top-2 transform -translate-x-1/2 text-xs text-[#e87979]">♥</span>
+                </div>
+
+                <p class="retro-font text-sm sm:text-base text-[#432c25] mt-2 mb-8 px-2">
+                    Solo quería sacarte una sonrisa 😊
+                </p>
+
+                <!-- Next Button -->
+                <button onclick="showCard2()" class="mt-2 bg-[#2b1b17] text-[#fcedec] px-8 py-3.5 rounded-full font-bold text-sm tracking-wider hover:bg-[#432c25] transition-all transform hover:scale-105 shadow-lg flex items-center gap-3 group">
+                    <span>Siguiente</span> <span class="group-hover:translate-x-1 transition-transform">→</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- CARD 2 (Initially Hidden) -->
+        <div id="card2" class="hidden bg-[#fff5f5] border-4 border-[#2b1b17] rounded-3xl p-6 sm:p-8 card-shadow relative overflow-hidden transition-all duration-700 transform scale-95 opacity-0">
+            <!-- Decorative corner elements -->
+            <div class="absolute top-4 left-4 text-xl text-[#2b1b17]">♥</div>
+            <div class="absolute top-4 right-4 text-xl text-[#2b1b17]">♥</div>
+            <div class="absolute bottom-4 left-4 text-xl text-[#2b1b17]">♥</div>
+            <div class="absolute bottom-4 right-4 text-xl text-[#2b1b17]">♥</div>
+
+            <!-- Inner Border Line -->
+            <div class="border-2 border-dashed border-[#2b1b17] rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center relative bg-gradient-to-b from-[#fffaf9] to-[#fcedec]">
+                
+                <!-- Sparkles & Central Heart -->
+                <div class="mb-3 relative">
+                    <div class="text-4xl text-[#e87979] animate-pulse-glow">♥</div>
+                    <div class="absolute -top-3 -left-7 text-sm">✨</div>
+                    <div class="absolute -top-3 -right-7 text-sm">✨</div>
+                </div>
+
+                <!-- Headings -->
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#2b1b17] tracking-tight leading-tight mb-2">
+                    Me gustaría conocerte
+                </h2>
+                
+                <div class="w-28 h-[2px] bg-[#2b1b17] my-3 relative">
+                    <span class="absolute left-1/2 -top-2 transform -translate-x-1/2 text-xs text-[#e87979]">♥</span>
+                </div>
+
+                <p class="retro-font text-base sm:text-lg text-[#2b1b17] mb-4 font-bold">
+                    ¿Me aceptarías una salida? 🥰
+                </p>
+
+                <!-- Enhanced Dancing Couple Illustration -->
+                <div class="my-3 flex justify-center items-center bg-white/40 p-3 rounded-2xl border border-[#2b1b17]/10 shadow-inner w-full">
+                    <svg class="w-44 h-32 text-[#2b1b17]" viewBox="0 0 200 150" fill="currentColor">
+                        <!-- Ground line with subtle gradient look -->
+                        <line x1="25" y1="132" x2="175" y2="132" stroke="#2b1b17" stroke-width="2.5" stroke-linecap="round"/>
+                        <!-- Floating musical/heart notes around dancers -->
+                        <text x="45" y="70" font-size="14">♪</text>
+                        <text x="145" y="65" font-size="16">♫</text>
+                        <text x="95" y="35" font-size="14">✨</text>
+                        <!-- Couple Silhouette: Man -->
+                        <path d="M85,128 L94,80 L80,70 L86,55 L93,60 L99,45 L110,55 L104,88 L112,128 Z" /> 
+                        <circle cx="91" cy="38" r="6.5" />
+                        <!-- Couple Silhouette: Woman in Dress -->
+                        <path d="M112,128 L122,90 L150,118 L138,128 Z" /> 
+                        <path d="M108,58 L128,42 L134,53 L120,62 Z" /> 
+                        <circle cx="130" cy="34" r="6.5" />
+                        <!-- Dancing swirls/motion lines -->
+                        <path d="M55,108 Q68,90 60,78" stroke="#2b1b17" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <path d="M145,108 Q132,90 140,78" stroke="#2b1b17" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </div>
+
+                <!-- Yes / No Buttons -->
+                <div id="buttonContainer" class="flex items-center justify-center gap-6 mt-4 w-full relative h-16">
+                    <button id="btnSi" onclick="handleYes()" class="bg-[#2b1b17] text-[#fcedec] px-8 py-3.5 rounded-full font-bold text-sm tracking-wider hover:bg-[#432c25] transition-all transform hover:scale-110 shadow-lg z-20 cursor-pointer">
+                        ¡Sí! 💖
+                    </button>
+                    <button id="btnNo" onmouseover="moveNo()" ontouchstart="moveNo()" onclick="moveNo()" class="bg-[#e5a8ab] text-[#2b1b17] border-2 border-[#2b1b17] px-8 py-3.5 rounded-full font-bold text-sm tracking-wider transition-all shadow-md absolute right-2 sm:right-6 cursor-pointer">
+                        No 🙈
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SUCCESS MESSAGE SCREEN -->
+        <div id="successCard" class="hidden bg-[#fff5f5] border-4 border-[#2b1b17] rounded-3xl p-8 card-shadow text-center transition-all duration-700 bg-gradient-to-b from-[#fffaf9] to-[#fcedec]">
+            <div class="text-6xl mb-4 animate-bounce">🎉🥰💖</div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#2b1b17] mb-2 tracking-tight">¡Sabía que dirías que sí!</h2>
+            <p class="retro-font text-sm text-[#432c25] mt-3">Prepara tus ánimos para pasar un momento increíble juntos.</p>
+        </div>
+
+    </div>
+
+    <script>
+        function showCard2() {
+            const card1 = document.getElementById('card1');
+            const card2 = document.getElementById('card2');
+
+            card1.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+            setTimeout(() => {
+                card1.classList.add('hidden');
+                card2.classList.remove('hidden');
+                setTimeout(() => {
+                    card2.classList.remove('opacity-0', 'scale-95');
+                    card2.classList.add('opacity-100', 'scale-100');
+                }, 50);
+            }, 500);
+        }
+
+        let noMoveCount = 0;
+        function moveNo() {
+            const btnNo = document.getElementById('btnNo');
+            
+            noMoveCount++;
+            if (noMoveCount > 5) {
+                btnNo.style.opacity = '0';
+                btnNo.style.pointerEvents = 'none';
+                return;
+            }
+
+            const randomX = (Math.random() - 0.5) * 150;
+            const randomY = (Math.random() - 0.5) * 90;
+
+            btnNo.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        }
+
+        function handleYes() {
+            const card2 = document.getElementById('card2');
+            const successCard = document.getElementById('successCard');
+
+            card2.classList.add('opacity-0', 'scale-95');
+            setTimeout(() => {
+                card2.classList.add('hidden');
+                successCard.classList.remove('hidden');
+                successCard.classList.add('opacity-100', 'scale-100');
+            }, 500);
+        }
+    </script>
+
+</body>
+</html>
